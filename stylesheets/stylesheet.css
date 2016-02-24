@@ -121,8 +121,6 @@ a {
 a:hover, a:focus {text-decoration: underline;}
 
 footer a {
-  color: #F2F2F2;
-  text-decoration: underline;
 }
 
 em {
@@ -358,13 +356,21 @@ Full-Width Styles
   background: #f2f2f2;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
+  position: absolute;
+  top: 0;
+  margin: 220px 0 100px 0;
+  bottom: 0;
 }
 
 #main_content {
   padding-top: 40px;
+  text-align: center;
 }
 
 #footer_wrap {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
   background: #212121;
 }
 
