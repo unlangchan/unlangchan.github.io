@@ -1,7 +1,7 @@
 {
   "name": "angular",
   "version": "0.1.0",
-  "description": "测试grunt压缩合并",
+  "description": "",
   "main": "index.js",
   "dependencies": {
     "grunt": "~0.4.4",
