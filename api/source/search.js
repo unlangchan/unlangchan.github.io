@@ -141,7 +141,7 @@ angular.module('search', [])
     var searchIndex = $q.defer();
     var results;
 
-    var worker = new Worker('js/search-worker.js');
+    var worker = new Worker('api/js/search-worker.js');
 
     // The worker will send us a message in two situations:
     // - when the index has been built, ready to run a query
