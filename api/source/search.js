@@ -103,7 +103,7 @@ angular.module('search', [])
     });
 
     // Delay building the index by loading the data asynchronously
-    var indexReadyPromise = $http.get('js/search-data.json').then(function(response) {
+    var indexReadyPromise = $http.get('api/js/search-data.json').then(function(response) {
       var searchData = response.data;
       // Delay building the index for 500ms to allow the page to render
       return $timeout(function() {
