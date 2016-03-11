@@ -91,7 +91,6 @@ angular.module('search', [])
   // which blocks rendering and other browser activities.
   // It should only be used where the browser does not support WebWorkers
   function localSearchFactory($http, $timeout, NG_PAGES) {
-
     console.log('Using Local Search Index');
 
     // Create the lunr index
@@ -105,6 +104,7 @@ angular.module('search', [])
     // Delay building the index by loading the data asynchronously
     var indexReadyPromise = $http.get('api/js/search-data.json').then(function(response) {
       var searchData = response.data;
+          console.log(searchData);
       // Delay building the index for 500ms to allow the page to render
       return $timeout(function() {
         // load the page data into the index
@@ -135,7 +135,7 @@ angular.module('search', [])
   // which does not block rendering and other browser activities.
   // It should only be used where the browser does support WebWorkers
   function webWorkerSearchFactory($q, $rootScope, NG_PAGES) {
-
+         console.dir(NG_PAGES);
     console.log('Using WebWorker Search Index')
 
     var searchIndex = $q.defer();
@@ -176,6 +176,7 @@ angular.module('search', [])
       });
     };
   }
+
   webWorkerSearchFactory.$inject = ['$q', '$rootScope', 'NG_PAGES'];
 
   return {

@@ -1,297 +1,448 @@
-<a href='https://github.com/angular/angular.js/edit/master/docs/content/api/index.ngdoc?message=docs(API Reference)%3A%20describe%20your%20change...#L1' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+<a href='https://github.com/angular/angular.js/edit/master/docs/content/api/index.ngdoc?message=docs(API Reference)%3A%20describe%20your%20change...#L1' class='improve-docs btn btn-primary'> <i class="glyphicon glyphicon-edit">&nbsp;</i>
+  Improve this Doc
+</a>
 
-
-<h1 id="angularjs-api-docs">AngularJS API Docs</h1>
-<p>Welcome to the AngularJS API docs page. These pages contain the AngularJS reference materials for version <strong ng-bind="version"></strong>.</p>
-<p>The documentation is organized into <strong><a href="guide/module">modules</a></strong> which contain various components of an AngularJS application.
-These components are <a href="guide/directive">directives</a>, <a href="guide/services">services</a>, <a href="guide/filter">filters</a>, <a href="guide/providers">providers</a>, <a href="guide/templates">templates</a>, global APIs, and testing mocks.</p>
+<h1 id="angularjs-api-docs">AngularJS API 中文文档</h1>
+<p>
+  欢迎来到 AngularJS API 中文文档。本文档提供的AngularJS参考材料，基于版本：<strong ng-bind="version"></strong>
+  。
+</p>
+<p>
+  文档由AngularJS应用的各种组件组成<strong><a href="guide/module">模块</a></strong>。
+  这些组件包括
+  <a href="guide/directive" title="指令">directives</a>
+  ，
+  <a href="guide/services" title="服务">services</a>
+  ，
+  <a href="guide/filter" title="过滤器">filters</a>
+  ，
+  <a href="guide/providers" title="供应商" >providers</a>
+  ，
+  <a href="guide/templates" title="模板">templates</a>
+  ， 全局API，和模拟测试。
+</p>
 <div class="alert alert-info">
-<strong>Angular Prefixes <code>$</code> and <code>$$</code></strong>:
-
-To prevent accidental name collisions with your code,
-Angular prefixes names of public objects with <code>$</code> and names of private objects with <code>$$</code>.
-Please do not use the <code>$</code> or <code>$$</code> prefix in your code.
+  <strong>Angular前缀为
+    <code>$</code>
+    和
+    <code>$$</code></strong> 
+  :Angular的公共对象前缀名为
+  <code>$</code>
+  ，私有对象前缀名为
+  <code>$$</code>；
+  为了防止命名冲突导致您的代码出现意外，
+  请在您的代码中不要使用前缀
+  <code>$</code>
+  和
+  <code>$$</code>。
 </div>
 
-<h2 id="angular-modules">Angular Modules</h2>
-<h2 id="-link-ng-ng-core-module-"><a href="api/ng">ng (core module)</a></h2>
-<p>This module is provided by default and contains the core components of AngularJS.</p>
+<h2 id="angular-modules" title="Module">Angular 模块</h2>
+<h2 id="-link-ng-ng-core-module-">
+  <a href="api/ng" title="core module">ng (核心模块)</a>
+</h2>
+<p>
+  这个模块是Angular自带的，并且包含AngularJS的核心组件。
+</p>
 <table class="definition-table spaced">
   <tr>
-    <td><a href="api/ng#directive">Directives</a></td>
+    <td>
+      <a href="api/ng#directive" title="指令" >Directives</a>
+    </td>
     <td>
       <p>
-        This is the core collection of directives you would use in your template code to build an AngularJS application.
+        这是的你构建AngularJS应用中模板代码(html)的核心组成部分，
       </p>
 
       <p>
-        Some examples include:
-          <a href="api/ng/directive/ngClick">ngClick</a>,
-          <a href="api/ng/directive/ngInclude">ngInclude</a>,
-          <a href="api/ng/directive/ngRepeat">ngRepeat</a>,
-          etc… <br />
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ng#service">Services / Factories</a>
-    </td>
-    <td>
-      <p>
-        This is the core collection of services which are used within the DI of your application.
-      </p>
-      <p>
-        Some examples include:
-          <a href="api/ng/service/$compile">$compile</a>,
-          <a href="api/ng/service/$http">$http</a>,
-          <a href="api/ng/service/$location">$location</a>,
-          etc…
-      <p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ng#filter">Filters</a>
-    </td>
-    <td>
-      <p>
-        The core filters available in the ng module are used to transform template data before it is rendered within directives and expressions.
-      </p>
-      <p>
-        Some examples include:
-          <a href="api/ng/filter/filter">filter</a>,
-          <a href="api/ng/filter/date">date</a>,
-          <a href="api/ng/filter/currency">currency</a>,
-          <a href="api/ng/filter/lowercase">lowercase</a>,
-          <a href="api/ng/filter/uppercase">uppercase</a>,
-            etc...
+        如：
+        <a href="api/ng/directive/ngClick">ngClick</a>
+        ,
+        <a href="api/ng/directive/ngInclude">ngInclude</a>
+        ,
+        <a href="api/ng/directive/ngRepeat">ngRepeat</a>
+        ,
+          等...
+        <br />
       </p>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="api/ng#function">Global APIs</a>
+      <a href="api/ng#service" title="服务/工厂">Services / Factories</a>
     </td>
     <td>
       <p>
-        The core global API functions are attached to the angular object. These core functions are useful for low level JavaScript operations within your application.
+      这是在应用程序使用的各种服务的核心集合。
       </p>
       <p>
-        Some examples include:
-        <a href="api/ng/function/angular.copy">angular.copy()</a>,
-        <a href="api/ng/function/angular.equals">angular.equals()</a>,
-        <a href="api/ng/function/angular.element">angular.element()</a>,
-          etc...
-      </p>
-    </td>
-  </tr>
-</table>
+         如:
+        <a href="api/ng/service/$compile" title="编译">$compile</a>
+        ,
+        <a href="api/ng/service/$http" title="http">$http</a>
+        ,
+        <a href="api/ng/service/$location" title="跳转">$location</a>
+        ,
+          等...
+        <p></td>
+      </tr>
+      <tr>
+        <td>
+          <a href="api/ng#filter" title="过滤器">Filters</a>
+        </td>
+        <td>
+          <p>
+            在ng模块中的核心过滤器用于在指令和表达式的值呈现给用户前转换模板数据;
+          </p>
+          <p>
+            如:
+            <a href="api/ng/filter/filter" title="过滤器">filter</a>
+            ,
+            <a href="api/ng/filter/date" title="时间">date</a>
+            ,
+            <a href="api/ng/filter/currency" title="货币">currency</a>
+            ,
+            <a href="api/ng/filter/lowercase" title="小写字母">lowercase</a>
+            ,
+            <a href="api/ng/filter/uppercase" title="大写字母">uppercase</a>
+            等...
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="api/ng#function">全局API</a>
+        </td>
+        <td>
+          <p>
+            核心全局的api函数在Angular对象下面. 这些核心方法在你进行一些不是很复杂的javascript操作的时候很管用。
+          </p>
+          <p>
+            如:
+            <a href="api/ng/function/angular.copy" title="复制">angular.copy()</a>
+            ,
+            <a href="api/ng/function/angular.equals" title="判断是否相等">angular.equals()</a>
+            ,
+            <a href="api/ng/function/angular.element" title="元素操作">angular.element()</a>
+          等...
+          </p>
+        </td>
+      </tr>
+    </table>
 
+    <h2 id="-link-ngroute-ngroute-">
+      <a href="api/ngRoute" title="路由">ngRoute</a>
+    </h2>
+    <p>
+      使用ngRoute在进行URL跳转时，对的应用程序进行路由管理.。
+      该 ngRoute 模块通过 hashbang 和 HTML5 pushState对URL进行管理.
+    </p>
+    <div class="alert alert-info">
+      引入
+      <strong>angular-route.js</strong>
+      文件；并设置你的Angular应用依赖于
+      <strong>ngRoute</strong>工作。如:angular.module('App',['ngRoute'])
+     
+    </div>
 
-<h2 id="-link-ngroute-ngroute-"><a href="api/ngRoute">ngRoute</a></h2>
-<p>Use ngRoute to enable URL routing to your application. The ngRoute module supports URL management via both hashbang and HTML5 pushState.</p>
-<div class="alert alert-info">Include the <strong>angular-route.js</strong> file and set <strong>ngRoute</strong> as a dependency for this to work in your application.</div>
+    <table class="definition-table spaced">
+      <tr>
+        <td>
+          <a href="api/ngRoute#service">Services / Factories</a>
+        </td>
+        <td>
+         以下服务可用于路由管理：
+          <ul>
+            <li>
+              <a href="api/ngRoute/service/$routeParams" title="字符串参数">$routeParams</a>
+              用于获取存在URL中的查询字符串。
+            </li>
+            <li>
+              <a href="api/ngRoute/service/$route" title="路由信息">$route</a>
+              用于获取点钱正在访问的路由信息。
+            </li>
+            <li>
+              <a href="api/ngRoute/provider/$routeProvider" title="注册路由">$routeProvider</a>
+              用于注册应用程序的路由。
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="api/ngRoute#directive" title="指令">Directives</a>
+        </td>
+        <td>
+          该
+          <a href="api/ngRoute/directive/ngView">ngView</a>
+          指令将当前路由的模板显示在页面中。
+        </td>
+      </tr>
+    </table>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngRoute#service">Services / Factories</a>
-    </td>
-    <td>
-      The following services are used for route management:
-      <ul>
-        <li><a href="api/ngRoute/service/$routeParams">$routeParams</a> is used to access the querystring values present in the URL.</li>
-        <li><a href="api/ngRoute/service/$route">$route</a> is used to access the details of the route that is currently being accessed.</li>
-        <li><a href="api/ngRoute/provider/$routeProvider">$routeProvider</a> is used to register routes for the application.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ngRoute#directive">Directives</a>
-    </td>
-    <td>
-      The <a href="api/ngRoute/directive/ngView">ngView</a> directive will display the template of the current route within the page.
-    </td>
-  </tr>
-</table>
+    <h2 id="-link-nganimate-nganimate-">
+      <a href="api/ngAnimate" title="动画">ngAnimate</a>
+    </h2>
+    <p>
+     使用ngAnimate为应用程序添加动画功能。当ngAnimate被引入后，其各种核心核心指令会直接应用到应用程序中。动画使用css过渡/动画 和 JavaScript回调来进行定义。
+    </p>
+    <div class="alert alert-info">
+      引入
+      <strong>angular-animate.js</strong>
+      文件；并设置你的Angular应用依赖于
+      <strong>ngAnimate</strong>工作。如:angular.module('App',['ngAnimate'])
+      
+    </div>
 
+    <table class="definition-table spaced">
+      <tr>
+        <td>
+          <a href="api/ngAnimate#service" title="服务/工厂">Services / Factories</a>
+        </td>
+        <td>
+          使用
+          <a href="api/ng/service/$animate">$animate</a>
+           在你的指令代码中触发动画操作。
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="api/ngAnimate" title="基于CSS的动画">CSS-based animations</a>
+        </td>
+        <td>
+          在AngularJS应用中按照ngAnimate的CSS命名规范来定义过渡/关键帧 动画 。
+          一旦定义成功，动画就可以通过在HTML模板代码中引用的CSS class而触发。
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="api/ngAnimate" title="基于javascript的动画">JS-based animations</a>
+        </td>
+        <td>
+          使用
+          <a href="api/ng/type/angular.Module#animation">module.animation()</a>
+          注册一个javascript动画。
+          一旦注册成功，动画就可以通过在HTML模板代码中引用的CSS class而触发。 
+        </td>
+      </tr>
+    </table>
 
-<h2 id="-link-nganimate-nganimate-"><a href="api/ngAnimate">ngAnimate</a></h2>
-<p>Use ngAnimate to enable animation features within your application. Various core ng directives will provide
-animation hooks into your application when ngAnimate is included. Animations are defined by using CSS transitions/animations
-or JavaScript callbacks.</p>
-<div class="alert alert-info">Include the <strong>angular-animate.js</strong> file and set <strong>ngAnimate</strong> as a dependency for this to work in your application.</div>
+    <h2 id="-link-ngaria-ngaria-">
+      <a href="api/ngAria" title="辅助功能">ngAria</a>
+    </h2>
+    <p>
+      使用 ngAria 注入常见的辅助功能到指令的属性上，以提高残疾人用的体验。
+    </p>
+    <div class="alert alert-info">
+      引入
+      <strong>angular-aria.js</strong>
+      文件；并设置你的Angular应用依赖于
+      ngAria 工作。如:angular.module('App',['ngAria'])
+    </div>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngAnimate#service">Services / Factories</a>
-    </td>
-    <td>
-      Use <a href="api/ng/service/$animate">$animate</a> to trigger animation operations within your directive code.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ngAnimate">CSS-based animations</a>
-    </td>
-    <td>
-      Follow ngAnimate’s CSS naming structure to reference CSS transitions / keyframe animations in AngularJS. Once defined, the animation can be triggered by referencing the CSS class within the HTML template code.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ngAnimate">JS-based animations</a>
-    </td>
-    <td>
-      Use <a href="api/ng/type/angular.Module#animation">module.animation()</a> to register a JavaScript animation. Once registered, the animation can be triggered by referencing the CSS class within the HTML template code.
-    </td>
-  </tr>
-</table>
+    <table class="definition-table spaced">
+      <tr>
+        <td>
+          <a href="api/ngAria#service" title="服务">Services</a>
+        </td>
+        <td>
+          <p>
+            
+            <a href="api/ngAria/service/$aria">$aria</a>
+            服务将定义辅助方法作为ARIA属性包含进HTML当中。
+            <p>
+              <p>
+                <a href="api/ngAria/provider/$ariaProvider">$ariaProvider</a>
+                用于配置ARIA属性。
+              </p>
+            </td>
+          </tr>
+        </table>
 
-<h2 id="-link-ngaria-ngaria-"><a href="api/ngAria">ngAria</a></h2>
-<p>Use ngAria to inject common accessibility attributes into directives and improve the experience for users with disabilities.</p>
-<div class="alert alert-info">Include the <strong>angular-aria.js</strong> file and set ngAria as a dependency for this to work in your application.</div>
+        <h2 id="-link-ngresource-ngresource-">
+          <a href="api/ngResource">ngResource</a>
+        </h2>
+        <p>
+          查询和发送数据使用REST API方式时使用ngResource模块
+        </p>
+        <div class="alert alert-info">
+          引入
+          <strong>angular-resource.js</strong>
+           文件；并设置你的Angular应用依赖于
+          <strong>ngResource</strong>
+           工作。如:angular.module('App',['ngResource'])
+        </div>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngAria#service">Services</a>
-    </td>
-    <td>
-      <p>
-          The <a href="api/ngAria/service/$aria">$aria</a> service contains helper methods for applying ARIA attributes to HTML.
-      <p>
-      <p>
-          <a href="api/ngAria/provider/$ariaProvider">$ariaProvider</a> is used for configuring ARIA attributes.
-      </p>
-    </td>
-  </tr>
-</table>
+        <table class="definition-table spaced">
+          <tr>
+            <td>
+              <a href="api/ngResource#service" title="服务/工厂">Services / Factories</a>
+            </td>
+            <td>
+              <a href="api/ngResource/service/$resource">$resource</a>
+              服务用来定义一个 REST API 风格的通信对象；
+            </td>
+          </tr>
+        </table>
 
-<h2 id="-link-ngresource-ngresource-"><a href="api/ngResource">ngResource</a></h2>
-<p>Use the ngResource module when querying and posting data to a REST API.</p>
-<div class="alert alert-info">Include the <strong>angular-resource.js</strong> file and set <strong>ngResource</strong> as a dependency for this to work in your application.</div>
+        <h2 id="-link-ngcookies-ngcookies-">
+          <a href="api/ngCookies" title="cookeis">ngCookies</a>
+        </h2>
+        <p>
+          使用ngCookies模块在应用程序中对cookie进行管理。
+        </p>
+        <div class="alert alert-info">
+          引入
+          <strong>angular-cookies.js</strong>
+          文件；并设置你的Angular应用依赖于
+          <strong>ngCookies</strong>
+          工作。如:angular.module('App',['ngCookies'])
+        </div>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngResource#service">Services / Factories</a>
-    </td>
-    <td>
-      The <a href="api/ngResource/service/$resource">$resource</a> service is used to define RESTful objects which communicate with a REST API.
-    </td>
-  </tr>
-</table>
+        <table class="definition-table spaced">
+          <tr>
+            <td>
+              <a href="api/ngCookies#service" title="服务/工厂">Services / Factories</a>
+            </td>
+            <td>
+              使用以下服务对cookie进行管理：
+              <ul>
+                <li>
 
-<h2 id="-link-ngcookies-ngcookies-"><a href="api/ngCookies">ngCookies</a></h2>
-<p>Use the ngCookies module to handle cookie management within your application.</p>
-<div class="alert alert-info">Include the <strong>angular-cookies.js</strong> file and set <strong>ngCookies</strong> as a dependency for this to work in your application.</div>
+                  <a href="api/ngCookies/service/$cookies">$cookie</a>
+                  服务是一个方便的封装,用来在浏览器的cookies中存储简单的数据。
+                </li>
+                <li>
+                  <a href="api/ngCookies/service/$cookieStore">$cookieStore</a>
+                  采用序列化的方式来存储更复杂的数据。
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngCookies#service">Services / Factories</a>
-    </td>
-    <td>
-      The following services are used for cookie management:
-      <ul>
-        <li>The <a href="api/ngCookies/service/$cookies">$cookie</a> service is a convenient wrapper to store simple data within browser cookies.</li>
-        <li><a href="api/ngCookies/service/$cookieStore">$cookieStore</a> is used to store more complex data using serialization.</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+        <h2 id="-link-ngtouch-ngtouch-">
+          <a href="api/ngTouch">ngTouch</a>
+        </h2>
+        <p>针对移动浏览器/设备开发时使用ngTouch。</p>
+        <div class="alert alert-info">
+          引入
+          <strong>angular-touch.js</strong>
+          文件；并设置你的Angular应用依赖于
+          <strong>ngTouch</strong>
+          工作。如:angular.module('App',['ngTouch'])
+        </div>
 
-<h2 id="-link-ngtouch-ngtouch-"><a href="api/ngTouch">ngTouch</a></h2>
-<p>Use ngTouch when developing for mobile browsers/devices.</p>
-<div class="alert alert-info">Include the <strong>angular-touch.js</strong> file and set <strong>ngTouch</strong> as a dependency for this to work in your application.</div>
+        <table class="definition-table spaced">
+          <tr>
+            <td>
+              <a href="api/ngTouch#service" title="相关服务/工厂">Services / Factories</a>
+            </td>
+            <td>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngTouch#service">Services / Factories</a>
-    </td>
-    <td>
-      The <a href="api/ngTouch/service/$swipe">$swipe</a> service is used to register and manage mobile DOM events.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ngTouch#directive">Directives</a>
-    </td>
-    <td>
-      Various directives are available in ngTouch to emulate mobile DOM events.
-    </td>
-  </tr>
-</table>
+              <a href="api/ngTouch/service/$swipe">$swipe</a>
+              服务用于注册和管理移动DOM事件。
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="api/ngTouch#directive" title="相关指令">Directives</a>
+            </td>
+            <td>
+              各种指令都可以使用ng​​Touch模拟移动DOM事件。
+            </td>
+          </tr>
+        </table>
 
-<h2 id="-link-ngsanitize-ngsanitize-"><a href="api/ngSanitize">ngSanitize</a></h2>
-<p>Use ngSanitize to securely parse and manipulate HTML data in your application.</p>
-<div class="alert alert-info">Include the <strong>angular-sanitize.js</strong> file and set <strong>ngSanitize</strong> as a dependency for this to work in your application.</div>
+        <h2 id="-link-ngsanitize-ngsanitize-">
+          <a href="api/ngSanitize" title="安全分析">ngSanitize</a>
+        </h2>
+        <p>
+          在应用程序中使用ngSanitize进行安全分析和操作HTML数据。
+        </p>
+        <div class="alert alert-info">
+          引入
+          <strong>angular-sanitize.js</strong>
+          文件。并设置你的Angular应用依赖于
+          <strong>ngSanitize</strong>工作。如：angular.module('App',['ngSanitize'])
+        </div>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngSanitize#service">Services / Factories</a>
-    </td>
-    <td>
-      The <a href="api/ngSanitize/service/$sanitize">$sanitize</a> service is used to clean up dangerous HTML code in a quick and convenient way.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ngSanitize#filter">Filters</a>
-    </td>
-    <td>
-      The <a href="api/ngSanitize/filter/linky">linky filter</a> is used to turn URLs into HTML links within the provided string.
-    </td>
-  </tr>
-</table>
+        <table class="definition-table spaced">
+          <tr>
+            <td>
+              <a href="api/ngSanitize#service" title="相关服务/工厂">Services / Factories</a>
+            </td>
+            <td>
+              使用
+              <a href="api/ngSanitize/service/$sanitize">$sanitize</a>
+              服务来快速，便捷的的清理危险的HTML代码。
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="api/ngSanitize#filter" title="相关过滤器">Filters</a>
+            </td>
+            <td>
+              使用
+              <a href="api/ngSanitize/filter/linky">linky filter</a>
+             将提供的字符串中的URL转换成HTML链接。
+            </td>
+          </tr>
+        </table>
 
-<h2 id="-link-ngmock-ngmock-"><a href="api/ngMock">ngMock</a></h2>
-<p>Use ngMock to inject and mock modules, factories, services and providers within your unit tests.</p>
-<div class="alert alert-info">Include the <strong>angular-mocks.js</strong> file into your test runner for this to work.</div>
+        <h2 id="-link-ngmock-ngmock-">
+          <a href="api/ngMock" title="模拟测试">ngMock</a>
+        </h2>
+        <p>
+         在单元测试中使用ngMock模拟inject , mock modules, factories, services , providers操作
+        </p>
+        <div class="alert alert-info">
+          引入
+          <strong>angular-mocks.js</strong>
+          文件；并添加依赖如：angular.module('App',['ngSanitize'])
+        </div>
 
-<table class="definition-table spaced">
-  <tr>
-    <td>
-      <a href="api/ngMock#service">Services / Factories</a>
-    </td>
-    <td>
-      <p>
-        ngMock will extend the behavior of various core services to become testing aware and manageable in a synchronous manner.
-      <p>
+        <table class="definition-table spaced">
+          <tr>
+            <td>
+              <a href="api/ngMock#service" title="相关服务/工厂">Services / Factories</a>
+            </td>
+            <td>
+              <p>
+                ngMock 可以以同步的方式延长各种核心服务的行为，从而进行观察和管理。
+                <p>
 
-      <p>
-        Some examples include:
-          <a href="api/ngMock/service/$timeout">$timeout</a>,
-          <a href="api/ngMock/service/$interval">$interval</a>,
-          <a href="api/ngMock/service/$log">$log</a>,
-          <a href="api/ngMock/service/$httpBackend">$httpBackend</a>,
-          etc...
-      <p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="api/ngMock#function">Global APIs</a>
-    </td>
-    <td>
-      <p>
-        Various helper functions are available to inject and mock modules within unit test code.
-      </p>
+                  <p>
+                    如:
+                    <a href="api/ngMock/service/$timeout">$timeout</a>
+                    ,
+                    <a href="api/ngMock/service/$interval">$interval</a>
+                    ,
+                    <a href="api/ngMock/service/$log">$log</a>
+                    ,
+                    <a href="api/ngMock/service/$httpBackend">$httpBackend</a>
+                    ,
+          等...
+                    <p></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="api/ngMock#function" title="相关的全局API">Global APIs</a>
+                    </td>
+                    <td>
+                      <p>
+                       在单元测试代码中各种辅助功能可以进行注入和模拟模块。
+                      </p>
 
-      <p>
-        Some examples
-          <a href="api/ngMock/function/angular.mock.inject">inject()</a>,
-          <a href="api/ngMock/function/angular.mock.module">module()</a>,
-          <a href="api/ngMock/function/angular.mock.dump">dump()</a>,
-          etc...
-      <p>
-    </td>
-  </tr>
-</table>
-
+                      <p>
+                        如
+                        <a href="api/ngMock/function/angular.mock.inject">inject()</a>
+                        ,
+                        <a href="api/ngMock/function/angular.mock.module">module()</a>
+                        ,
+                        <a href="api/ngMock/function/angular.mock.dump">dump()</a>
+                        ,
+          等...
+                        <p></td>
+                      </tr>
+                    </table>

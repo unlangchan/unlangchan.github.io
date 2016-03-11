@@ -27,7 +27,6 @@ angular.module('DocsController', [])
 
     path = path.replace(/^\/?(.+?)(\/index)?\/?$/, '$1');
     currentPage = $scope.currentPage = NG_PAGES[path];
-     console.dir(NG_PAGES);
 
     if ( currentPage ) {
       $scope.partialPath = 'api/partials/' + path + '.html';
@@ -37,7 +36,9 @@ angular.module('DocsController', [])
       var breadcrumbPath = '';
       angular.forEach(pathParts, function(part) {
         breadcrumbPath += part;
-        breadcrumb.push({ name: (NG_PAGES[breadcrumbPath]&&NG_PAGES[breadcrumbPath].name) || part, url: breadcrumbPath });
+        breadcrumb.push({ name: (NG_PAGES[breadcrumbPath]&&NG_PAGES[breadcrumbPath].name) || part,
+                           url: breadcrumbPath,
+                         title: (NG_PAGES[breadcrumbPath]&&NG_PAGES[breadcrumbPath].title)||part});
         breadcrumbPath += '/';
       });
     } else {

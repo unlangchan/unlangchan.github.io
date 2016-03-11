@@ -4,7 +4,8 @@ angular.module('pagesData', [])
   "api": {
     "name": "API Reference",
     "area": "api",
-    "path": "api"
+    "path": "api",
+    "title":"API 参考"
   },
   "error/$animate/nocb": {
     "name": "nocb",
