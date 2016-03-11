@@ -135,7 +135,6 @@ angular.module('search', [])
   // which does not block rendering and other browser activities.
   // It should only be used where the browser does support WebWorkers
   function webWorkerSearchFactory($q, $rootScope, NG_PAGES) {
-         console.dir(NG_PAGES);
     console.log('Using WebWorker Search Index')
 
     var searchIndex = $q.defer();

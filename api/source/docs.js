@@ -5,6 +5,11 @@ angular.module('DocsController', [])
               'NG_PAGES', 'NG_NAVIGATION', 'NG_VERSION',
   function($scope, $rootScope, $location, $window, $cookies,
               NG_PAGES, NG_NAVIGATION, NG_VERSION) {
+    var url=$cookies.get('url');
+          $cookies.remove('url'); 
+          console.log(url);
+        $location.path(url).replace();
+        
 
   $scope.docsVersion = NG_VERSION.isSnapshot ? 'snapshot' : NG_VERSION.version;
 
