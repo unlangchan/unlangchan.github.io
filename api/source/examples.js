@@ -177,7 +177,7 @@ angular.module('examples', [])
         var filePromises = [];
 
         angular.forEach(manifest.files, function(filename) {
-          filePromises.push($http.get('/'+exampleFolder + '/' + filename, { transformResponse: [] })
+          filePromises.push($http.get('/api/'+exampleFolder + '/' + filename, { transformResponse: [] })
             .then(function(response) {
 
               // The manifests provide the production index file but Plunkr wants
