@@ -6,11 +6,11 @@ angular.module('DocsController', [])
   function($scope, $rootScope, $location, $window, $cookies,
               NG_PAGES, NG_NAVIGATION, NG_VERSION) {
     var url=$cookies.get('url');
-        url=decodeURI(url);
+    if(url){
+          url=decodeURI(url);
           $cookies.remove('url'); 
-          console.log(url);
-        $location.path(url).replace();
-        
+          $location.path(url).replace();
+       }
 
   $scope.docsVersion = NG_VERSION.isSnapshot ? 'snapshot' : NG_VERSION.version;
 
@@ -33,7 +33,6 @@ angular.module('DocsController', [])
 
     path = path.replace(/^\/?(.+?)(\/index)?\/?$/, '$1');
     currentPage = $scope.currentPage = NG_PAGES[path];
-
     if ( currentPage ) {
       $scope.partialPath = 'api/partials/' + path + '.html';
       $scope.currentArea = NG_NAVIGATION[currentPage.area];
