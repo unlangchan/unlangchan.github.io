@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <script src="api/libs/angularjs/1.5.0/angular.min.js"></script>
+  </head>
+  <body>
+  	<div ng-controller="domController">
+  		<div getheght="h" style="height: 100px;background-color: red;" ></div>
+        <div class="flex" settop="h"  style="background-color: blue;"> </div>
+  	</div>
+  </body>
+</html>
+
+
+<script type="text/javascript">
+angular.module('myApp', [])
+  .controller('domController',['$scope',function($scope) {
+  }])
+.directive("getheght", [function () {
+     return { 
+        restrict: 'A',
+        scope: {
+        	getheght:'='
+        },
+        link: function (scope, element, attributes) {
+           console.dir([scope,element,attributes]);
+           scope.getheght=element[0].offsetHeight;
+        }
+    }
+}])
+.directive("settop", ["$timeout",function ($timeout) {
+    return { 
+        restrict: 'A',
+        scope: {
+        	settop:'='
+        },
+        link: function (scope, element, attributes) {
+           console.dir([scope,element,attributes]);
+           $timeout(function(){
+            element[0].style.height=scope.settop+'px';
+           })
+        }
+    }
+}]);  
+
+</script>

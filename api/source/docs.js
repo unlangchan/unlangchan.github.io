@@ -6,6 +6,7 @@ angular.module('DocsController', [])
   function($scope, $rootScope, $location, $window, $cookies,
               NG_PAGES, NG_NAVIGATION, NG_VERSION) {
     var url=$cookies.get('url');
+        url=decodeURI(url);
           $cookies.remove('url'); 
           console.log(url);
         $location.path(url).replace();
