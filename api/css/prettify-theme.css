@@ -12,6 +12,11 @@
 
 .pln {
   color: #333333;
+
+}
+.pln[title] {
+   font-weight:bold;
+   cursor: help;
 }
 
 @media screen {

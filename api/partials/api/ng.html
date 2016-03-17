@@ -6,72 +6,69 @@
   <code>ng</code>
 </h1>
 
-<h1 id="ng-core-module-">ng (core module)</h1>
+<h1 id="ng-core-module-">ng (核心模块)</h1>
 <p>
-  The ng module is loaded by default when an AngularJS application is started. The module itself
-contains the essential components for an AngularJS application to function. The table below
-lists a high level breakdown of each of the services/factories, filters, directives and testing
-components available within this core module.
+  当AngularJS应用程序启动时,默认自动加载ng模块。该模块包含的基本组件是AngularJS应用功能的重要组成奔赴。下表列出该核心模块提供的所有可用的:
+  <span class="pln" title="服务/工厂">services/factories</span>，
+  <span class="pln" title="过滤">filters</span>，
+  <span class="pln" title="指令">directives </span>，
+  <span class="pln" title="测试组件">testing components</span>
+ 。
 </p>
 <div doc-module-components="ng"></div>
 
 <div class="component-breakdown">
-  <h2>Module Components</h2>
+  <h2 title="Module Components">模块组件</h2>
 
   <div>
-    <h3 class="component-heading" id="function">Function</h3>
+    <h3 class="component-heading" id="function" title="Function">函数</h3>
     <table class="definition-table">
       <tr>
-        <th>Name</th>
-        <th>Description</th>
+        <th title="Name">名称</th>
+        <th title="Description">描述</th>
       </tr>
 
       <tr>
         <td>
-          <a href="api/ng/function/angular.forEach">angular.forEach</a>
+          <a href="api/ng/function/angular.forEach" title="遍历函数">angular.forEach</a>
         </td>
         <td>
           <p>
-            Invokes the
-            <code>iterator</code>
-            function once for each item in
-            <code>obj</code>
-            collection, which can be either an
-object or an array. The
-            <code>iterator</code>
-            function is invoked with
+            调用
+            <code title="迭代">iterator</code>
+            函数遍历一个
+            <code title="obj">对象</code>
+           集合的每一项,它可以是一个对象或者数组.该
+            <code title="迭代">iterator</code>
+            函数以
             <code>iterator(value, key, obj)</code>
-            , where
+            的形式调用,其中
             <code>value</code>
-            is the value of an object property or an array element,
+            是一个对象的属性或数组元素的值,
             <code>key</code>
-            is the object property key or
-array element index and obj is the
+            是对象的属性键或者数组元素的索引,
             <code>obj</code>
-            itself. Specifying a
-            <code>context</code>
-            for the function is optional.
+            表示被遍历的对象自身。指定
+            <code title="上下文">context</code>
+           的功能是可选的。
           </p>
         </td>
       </tr>
 
       <tr>
         <td>
-          <a href="api/ng/function/angular.extend">angular.extend</a>
+          <a href="api/ng/function/angular.extend" title="浅拷贝">angular.extend</a>
         </td>
         <td>
           <p>
-            Extends the destination object
-            <code>dst</code>
-            by copying own enumerable properties from the
-            <code>src</code>
-            object(s)
-to
-            <code>dst</code>
-            . You can specify multiple
-            <code>src</code>
-            objects. If you want to preserve original objects, you can do so
-by passing an empty object as the target:
+            通过从目标对象
+            <code title="源">src</code>
+            复制所有可枚举的属性
+            到目标对象
+            <code title="目标">dst</code>,
+            对<code title="目标">dst</code>进行拓展。
+            您可以指定多个<code title="源">src</code>对象。
+            如果您想保留原始对象，您可以通过传递一个空对象作为目标，比如:
             <code>var object = angular.extend({}, object1, object2)</code>
             .
           </p>
@@ -80,23 +77,20 @@ by passing an empty object as the target:
 
       <tr>
         <td>
-          <a href="api/ng/function/angular.merge">angular.merge</a>
+          <a href="api/ng/function/angular.merge" title="深拷贝">angular.merge</a>
         </td>
         <td>
           <p>
-            Deeply extends the destination object
-            <code>dst</code>
-            by copying own enumerable properties from the
-            <code>src</code>
-            object(s)
-to
-            <code>dst</code>
-            . You can specify multiple
-            <code>src</code>
-            objects. If you want to preserve original objects, you can do so
-by passing an empty object as the target:
+            通过从目标对象
+            <code title="源">src</code>
+            复制所有可枚举的属性
+            到目标对象
+            <code title="目标">dst</code>,
+            对<code title="目标">dst</code>进行深层次拓展。
+            您可以指定多个<code title="源">src</code>对象。
+            如果您想保留原始对象，您可以通过传递一个空对象作为目标，比如:
             <code>var object = angular.merge({}, object1, object2)</code>
-            .
+            . <strong>注:<a href="https://www.zhihu.com/question/23031215">相关文章</a></strong> 
           </p>
         </td>
       </tr>
@@ -107,12 +101,12 @@ by passing an empty object as the target:
         </td>
         <td>
           <p>
-            A function that performs no operations. This function can be useful when writing code in the
-functional style.
+           函数不执行任何操作.该函数在编写函数式风格的代码时,会很有用。比如:
           </p>
           <pre><code class="lang-js">function foo(callback) {
   var result = calculateResult();
   (callback || angular.noop)(result);
+  //假若有回调函数传入则执行回调函数,若callback为false则什么都不做
 }
 </code></pre>
         </td>
@@ -124,8 +118,7 @@ functional style.
         </td>
         <td>
           <p>
-            A function that returns its first argument. This function is useful when writing code in the
-functional style.
+            此函数返回他的第一个参数;该函数在编写函数式风格的代码时,会很有用.
           </p>
         </td>
       </tr>
@@ -135,7 +128,7 @@ functional style.
           <a href="api/ng/function/angular.isUndefined">angular.isUndefined</a>
         </td>
         <td>
-          <p>Determines if a reference is undefined.</p>
+          <p>判断引用是否未被定义。</p>
         </td>
       </tr>
 
@@ -144,7 +137,7 @@ functional style.
           <a href="api/ng/function/angular.isDefined">angular.isDefined</a>
         </td>
         <td>
-          <p>Determines if a reference is defined.</p>
+          <p>判断引用是否被定义。</p>
         </td>
       </tr>
 
@@ -154,14 +147,12 @@ functional style.
         </td>
         <td>
           <p>
-            Determines if a reference is an
+            判断引用是否为
             <code>Object</code>
-            . Unlike
-            <code>typeof</code>
-            in JavaScript,
+            . 不同于原生JavaScript的
+            <code>typeof</code>,
             <code>null</code>
-            s are not
-considered to be objects. Note that JavaScript arrays are objects.
+             不再会被判断为对象。注意在JavaScript中数组也是对象。
           </p>
         </td>
       </tr>
@@ -172,8 +163,8 @@ considered to be objects. Note that JavaScript arrays are objects.
         </td>
         <td>
           <p>
-            Determines if a reference is a
-            <code>String</code>
+           判断是否为
+            <code title="String">字符串</code>
             .
           </p>
         </td>
@@ -185,8 +176,8 @@ considered to be objects. Note that JavaScript arrays are objects.
         </td>
         <td>
           <p>
-            Determines if a reference is a
-            <code>Number</code>
+            判断是否为
+            <code title="Number">数字</code>
             .
           </p>
         </td>
@@ -197,7 +188,11 @@ considered to be objects. Note that JavaScript arrays are objects.
           <a href="api/ng/function/angular.isDate">angular.isDate</a>
         </td>
         <td>
-          <p>Determines if a value is a date.</p>
+         <p>
+            判断是否为
+            <code title="Date">日期</code>
+            .
+          </p>
         </td>
       </tr>
 
@@ -207,8 +202,8 @@ considered to be objects. Note that JavaScript arrays are objects.
         </td>
         <td>
           <p>
-            Determines if a reference is an
-            <code>Array</code>
+            判断引用是否为
+            <code title="Array">数组</code>
             .
           </p>
         </td>
@@ -219,9 +214,9 @@ considered to be objects. Note that JavaScript arrays are objects.
           <a href="api/ng/function/angular.isFunction">angular.isFunction</a>
         </td>
         <td>
-          <p>
-            Determines if a reference is a
-            <code>Function</code>
+         <p>
+            判断引用是否为
+            <code title="Function">函数</code>
             .
           </p>
         </td>
@@ -231,9 +226,9 @@ considered to be objects. Note that JavaScript arrays are objects.
         <td>
           <a href="api/ng/function/angular.isElement">angular.isElement</a>
         </td>
-        <td>
+        <td> 
           <p>
-            Determines if a reference is a DOM element (or wrapped jQuery element).
+            判断引用是否为DOM元素（或封装的jQuery元素对象）。
           </p>
         </td>
       </tr>
@@ -244,10 +239,10 @@ considered to be objects. Note that JavaScript arrays are objects.
         </td>
         <td>
           <p>
-            Creates a deep copy of
-            <code>source</code>
-            , which should be an object or an array.
-          </p>
+             对目标进行深层次的拷贝
+            <code title="source">目标</code>
+            , 目标应为对象或数组
+            </p>
         </td>
       </tr>
 
@@ -257,8 +252,7 @@ considered to be objects. Note that JavaScript arrays are objects.
         </td>
         <td>
           <p>
-            Determines if two objects or two values are equivalent. Supports value types, regular
-expressions, arrays and objects.
+           确定两个对象或两个值是相等的。支持值类型，正则表达式，数组和对象。
           </p>
         </td>
       </tr>
@@ -269,7 +263,7 @@ expressions, arrays and objects.
         </td>
         <td>
           <p>
-            Returns a function which calls function
+             返回
             <code>fn</code>
             bound to
             <code>self</code>
