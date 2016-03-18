@@ -263,25 +263,23 @@
         </td>
         <td>
           <p>
-             返回
+             返回一个调用函数
             <code>fn</code>
-            bound to
+            功能,且上下文关系为
+            <code>self</code>的函数
+            (即
             <code>self</code>
-            (
-            <code>self</code>
-            becomes the
+            作为
+            <code>fn</code>
+            的
             <code>this</code>
-            for
-            <code>fn</code>
-            ). You can supply optional
-            <code>args</code>
-            that are prebound to the function. This feature is also
-known as
-            <a href="http://en.wikipedia.org/wiki/Partial_application">partial application</a>
-            , as
-distinguished from
-            <a href="http://en.wikipedia.org/wiki/Currying#Contrast_with_partial_function_application">function currying</a>
-            .
+            ). 你可以预置一些可选的
+            <code title="参数">args</code>
+            绑定到函数中. 该功能也为称为
+            <a href="http://en.wikipedia.org/wiki/Partial_application" title="局部应用">partial application</a>
+            ,用以跟
+            <a href="http://en.wikipedia.org/wiki/Currying#Contrast_with_partial_function_application" title="柯里化函数">function currying</a>
+            区分.
           </p>
         </td>
       </tr>
@@ -292,8 +290,8 @@ distinguished from
         </td>
         <td>
           <p>
-            Serializes input into a JSON-formatted string. Properties with leading $$ characters will be
-stripped since angular uses this notation internally.
+           序列化成JSON格式的字符串. 请不要使用 $$ 字符作为属性的键,因为Angular会在内部使用，并会对其进行剥离处理。
+
           </p>
         </td>
       </tr>
@@ -303,7 +301,7 @@ stripped since angular uses this notation internally.
           <a href="api/ng/function/angular.fromJson">angular.fromJson</a>
         </td>
         <td>
-          <p>Deserializes a JSON string.</p>
+          <p>反序列化JSON字符串。</p>
         </td>
       </tr>
 
@@ -312,7 +310,7 @@ stripped since angular uses this notation internally.
           <a href="api/ng/function/angular.bootstrap">angular.bootstrap</a>
         </td>
         <td>
-          <p>Use this function to manually start up angular application.</p>
+          <p>该函数用于手动启动 angular 应用.</p>
         </td>
       </tr>
 
@@ -322,8 +320,8 @@ stripped since angular uses this notation internally.
         </td>
         <td>
           <p>
-            Use this function to reload the current application with debug information turned on.
-This takes precedence over a call to
+               该函数以开启调试信息的方式重载当前应用,
+               在使用前需进行以下操作:
             <code>$compileProvider.debugInfoEnabled(false)</code>
             .
           </p>
@@ -336,9 +334,8 @@ This takes precedence over a call to
         </td>
         <td>
           <p>
-            Creates an injector object that can be used for retrieving services as well as for
-dependency injection (see
-            <a href="guide/di">dependency injection</a>
+            创建一个可以被检索的服务，以及依赖注入(见
+            <a href="guide/di" title="依赖注入">dependency injection</a>
             ).
           </p>
         </td>
@@ -350,9 +347,9 @@ dependency injection (see
         </td>
         <td>
           <p>
-            Wraps a raw DOM element or HTML string as a
+           将原始的DOM元素或HTML字符串封装成
             <a href="http://jquery.com">jQuery</a>
-            element.
+            元素.
           </p>
         </td>
       </tr>
@@ -363,12 +360,11 @@ dependency injection (see
         </td>
         <td>
           <p>
-            The
+            
             <code>angular.module</code>
-            is a global place for creating, registering and retrieving Angular
-modules.
-All modules (angular core or 3rd party) that should be available to an application must be
-registered using this mechanism.
+            用于创建，注册和检索 全局Angular
+模块。
+所有模块 (angular 核心和第三方) 都必须使用这种机制进行注册。
           </p>
         </td>
       </tr>
@@ -377,11 +373,11 @@ registered using this mechanism.
   </div>
 
   <div>
-    <h3 class="component-heading" id="directive">Directive</h3>
+    <h3 class="component-heading" id="directive" title="Directive">指令</h3>
     <table class="definition-table">
       <tr>
-        <th>Name</th>
-        <th>Description</th>
+        <th title="Name">名称</th>
+        <th title="Description">描述</th>
       </tr>
 
       <tr>
@@ -390,9 +386,8 @@ registered using this mechanism.
         </td>
         <td>
           <p>
-            Use this directive to force the angular.element library.  This should be
-used to force either jqLite by leaving ng-jq blank or setting the name of
-the jquery variable under window (eg. jQuery).
+            使用该指令强制指定angular.element使用的库.  通过在window下设置 ng-jq 空白或者变量名称来使所有jqLite失效
+(如 jQuery).
           </p>
         </td>
       </tr>
@@ -403,17 +398,17 @@ the jquery variable under window (eg. jQuery).
         </td>
         <td>
           <p>
-            Use this directive to <strong>auto-bootstrap</strong>
-            an AngularJS application. The
+            该指令用于<strong title="auto-bootstrap">自动引导</strong>
+            启动AngularJS 应用. 
             <code>ngApp</code>
-            directive
-designates the <strong>root element</strong>
-            of the application and is typically placed near the root element
-of the page - e.g. on the
+            指令
+           指定应用的<strong title="root element">根元素</strong>，
+           并且通常放只在页面的根元素附近，
+            如：
             <code>&lt;body&gt;</code>
-            or
+            或
             <code>&lt;html&gt;</code>
-            tags.
+            标签.
           </p>
         </td>
       </tr>
@@ -424,8 +419,7 @@ of the page - e.g. on the
         </td>
         <td>
           <p>
-            Modifies the default behavior of the html A tag so that the default action is prevented when
-the href attribute is empty.
+            当href属性为空时。阻止和修改html的默认行为;
           </p>
         </td>
       </tr>
@@ -436,18 +430,13 @@ the href attribute is empty.
         </td>
         <td>
           <p>
-            Using Angular markup like
-            <code>{{hash}}</code>
-            in an href attribute will
-make the link go to the wrong URL if the user clicks it before
-Angular has a chance to replace the
-            <code>{{hash}}</code>
-            markup with its
-value. Until Angular replaces the markup the link will be broken
-and will most likely return a 404 error. The
-            <code>ngHref</code>
-            directive
-solves this problem.
+           在href属性中使用Angular标记时，如
+            <code>{{hash}}</code>，
+           假若用户在Angular替换
+            <code>{{hash}}</code>的值之前进行点击将会跳转到错误的链接
+。在Angular替换完之前,最有可能返回404错误。而
+           <code>ngHref</code>
+            指令解决了这种问题。
           </p>
         </td>
       </tr>
@@ -458,19 +447,12 @@ solves this problem.
         </td>
         <td>
           <p>
-            Using Angular markup like
-            <code>{{hash}}</code>
-            in a
-            <code>src</code>
-            attribute doesn&#39;t
-work right: The browser will fetch from the URL with the literal
-text
-            <code>{{hash}}</code>
-            until Angular replaces the expression inside
-            <code>{{hash}}</code>
-            . The
+           在src属性中使用Angular标记时，如
+            <code>{{hash}}</code>,可能会工作不正常：
+            浏览器将从URL直接抓取
+            <code>{{hash}}</code>的文本，直到Angular替换完毕。而
             <code>ngSrc</code>
-            directive solves this problem.
+            指令解决了这种问题。
           </p>
         </td>
       </tr>
@@ -481,19 +463,12 @@ text
         </td>
         <td>
           <p>
-            Using Angular markup like
-            <code>{{hash}}</code>
-            in a
-            <code>srcset</code>
-            attribute doesn&#39;t
-work right: The browser will fetch from the URL with the literal
-text
-            <code>{{hash}}</code>
-            until Angular replaces the expression inside
-            <code>{{hash}}</code>
-            . The
+            在srcset属性中使用Angular标记时，如
+            <code>{{hash}}</code>,可能会工作不正常：
+            浏览器将从URL直接抓取
+            <code>{{hash}}</code>的文本，直到Angular替换完毕。而
             <code>ngSrcset</code>
-            directive solves this problem.
+            指令解决了这种问题。
           </p>
         </td>
       </tr>
@@ -504,13 +479,11 @@ text
         </td>
         <td>
           <p>
-            This directive sets the
-            <code>disabled</code>
-            attribute on the element if the
-            <a href="guide/expression">expression</a>
-            inside
-            <code>ngDisabled</code>
-            evaluates to truthy.
+            若
+            <code>ngDisabled</code>的
+             <a href="guide/expression" title="expression">表达式</a>的值为truthy,该指令会为元素添加
+            <code title="残疾人">disabled</code>
+            属性。
           </p>
         </td>
       </tr>
