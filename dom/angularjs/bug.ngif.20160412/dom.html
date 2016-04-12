@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="domApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>ngif and audio</title>
+	<meta name="description" content="a bug of ngif and audio">
+	<meta name="keywords" content="ngif,audio,angular,angularjs">
+	<link href="" rel="stylesheet">
+	<script type="text/javascript" src="/api/libs/angularjs/1.5.0/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="ctr-1">
+      <div class="title">has bug</div>
+      <div ng-if="ready">
+		<music src="test.ogg" loop="" autoplay=""></music>
+		</div>
+		<button ng-click="ready = !ready">add/remove</button>
+     </div>
+     <div ng-controller="ctr-2">
+      <div class="title">don't use ng-if</div>
+        <div id="ctr-2"></div>
+		<button ng-click="click()">add/remove</button>
+     </div>
+     <div ng-controller="ctr-3">
+      <div class="title">don't use directive</div>
+      <div ng-if="ready">
+		<audio src="test.ogg" loop="" autoplay=""></audio>
+		</div>
+		<button ng-click="ready = !ready">add/remove</button>
+     </div>
+</body>
+</html>
+<script type="text/javascript">
+	angular.module('domApp',[])
+	.directive("music", [function () {
+	    return { 
+	        restrict: 'E',
+	        template:'<audio></audio>',
+	        replace:true,
+	        link: function (scope, element, attributes) {
+
+	        }
+        }
+   }])
+	.controller('ctr-1',function($scope){
+       $scope.ready = false;
+	})
+	.controller('ctr-2',['$scope','$compile',function($scope,$compile){
+		var dom = document.getElementById('ctr-2');
+		function add(){
+			var html=$compile('<music src="test.ogg" loop="" autoplay=""></music>')($scope);
+			angular.element(dom).append(html);
+			$scope.click = remove;
+		}
+		function remove(){
+			angular.element(dom).children().remove();
+			$scope.click = add;
+		}
+		$scope.click = add;
+	}])
+	.controller('ctr-3',function($scope){
+       $scope.ready = false;
+	});
+</script>
